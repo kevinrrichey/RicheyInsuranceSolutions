@@ -673,7 +673,7 @@ footer {
       <div class="section-label">Get in Touch</div>
       <h1>Let's build your<br>plan <em>together</em></h1>
       <p>Whether you're just starting to think about protection or ready to implement an Infinite Banking strategy, we're here to guide you — with no pressure and no jargon.</p>
-      <div class="cd"><div class="cd-icon">📧</div><div class="cd-text"><strong>Email</strong><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d66687b64634d7f646e65687464637e787f6c636e687e626178796462637e236e6260">[email&#160;protected]</a></span></div></div>
+      <div class="cd"><div class="cd-icon">📧</div><div class="cd-text"><strong>Email</strong><span><a href="mailto:kevin@richeyinsurancesolutions.com" style="color:inherit;text-decoration:none;">kevin@richeyinsurancesolutions.com</a></span></div></div>
       <div class="cd"><div class="cd-icon">📞</div><div class="cd-text"><strong>Phone</strong><span>916-500-3598</span></div></div>
       <div class="cd"><div class="cd-icon">📍</div><div class="cd-text"><strong>Serving</strong><span>California &amp; Nationwide</span></div></div>
       <div class="cd"><div class="cd-icon">🕐</div><div class="cd-text"><strong>Response Time</strong><span>Within 1 business day</span></div></div>
@@ -687,7 +687,7 @@ footer {
         <strong>Schedule Your Discovery Call</strong>
         <p>Click below to open our live scheduling calendar.</p>
         
-        <a href="/cdn-cgi/l/email-protection#8de6e8fbe4e3cdffe4eee5e8f4e4e3fef8ffece3eee8fee2e1f8f9e4e2e3fea3eee2e0" class="btn-primary" style="margin-top:20px;">Email to Schedule →</a>
+        <a href="https://vault.unlimitedlifeconcepts.com/book-with-kevin" target="_blank" class="btn-primary" style="margin-top:20px;">Book Your Discovery Call →</a>
       </div>
       <div class="contact-note">
         💡 <strong style="color:rgba(255,255,255,0.75);">What to expect:</strong> We'll ask a few questions about your current situation, walk through your goals, and share what options might make sense. You'll leave with clarity — not a hard sell.
@@ -713,10 +713,23 @@ footer {
   <div class="footer-tagline">Your Wealth, Your Way</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<script>
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-const obs = new I
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
