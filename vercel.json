@@ -1,8 +1,1 @@
-{
-  "rewrites": [
-    {
-      "source": "/cashflowtool/:path*",
-      "destination": "https://cash-flow-clarity-seven.vercel.app/:path*"
-    }
-  ]
-}
+{}
