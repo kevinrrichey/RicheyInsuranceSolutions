@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/cashflowtool/:path*",
-      "destination": "https://vercel.com/richeyinsurancesolutions-gmailcoms-projects/cash-flow-clarity/9WRTa7q5SkePPBpTEmZPugAT92tT:path*"
+      "destination": "https://cash-flow-clarity-seven.vercel.app/:path*"
     }
   ]
 }
