@@ -350,6 +350,7 @@ footer {
   nav{padding:16px 24px;}
   .hero,.problems-section,.tools-section,.benefits-section .benefits-inner,.services-hero,.services-list,.ibc-hero,.steps-section .steps-inner,.ibc-benefits,.vs-section,.contact-section,.values-section,.about-wrap{padding-left:24px;padding-right:24px;}
   .problem-grid,.ib-grid,.v-grid,.tools-grid{grid-template-columns:1fr;}
+  #page-services .v-card[style*="grid-column"]{grid-column:auto;}
   .b-grid{grid-template-columns:1fr;}
   .steps-grid{grid-template-columns:repeat(2,1fr);}
   .steps-grid::before{display:none;}
@@ -496,10 +497,6 @@ footer {
         </div>
         <div class="b-item">
           <div class="b-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="b-text"><strong>Annuities &amp; Retirement Income</strong><span>Protected income strategies that give you certainty — guaranteed income you cannot outlive regardless of markets.</span></div>
-        </div>
-        <div class="b-item">
-          <div class="b-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="b-text"><strong>Education First. No Pressure.</strong><span>We believe an informed client makes the best decisions. We invest in your understanding before anything else.</span></div>
         </div>
       </div>
@@ -541,7 +538,7 @@ footer {
         <p>I started where a lot of people start — following Dave Ramsey's baby steps, working toward debt freedom, doing everything I was supposed to do. Then life got hard. <strong>Six kids, an economic crisis, and a plan that wasn't built for what actually happens.</strong> It took years to recover and find stability again.</p>
         <div class="pull-quote">"It wasn't a new budget strategy that pulled me forward. It was a shift in how I thought about money itself."</div>
         <p>It started small — using credit cards strategically for rewards and realizing there was more leverage available than I'd been taught to look for. That cracked the door open. In 2022, my brother-in-law handed me <em>Becoming Your Own Banker</em> by R. Nelson Nash. I read it. Then I read it again.</p>
-        <p>I found Nate Dean — one of the most respected IBC educators in the country and someone who has since become a genuine mentor to me — went through his course, had my own discovery call, brought my wife in, and we started our first policy in May 2023. The moment I knew this was my work came during a live event with Nate and his business partner, Brandon Goswick — <strong>something shifted. I knew I was supposed to be part of this.</strong></p>
+        <p>I found Nate Dean — one of the most respected IBC educators in the country and someone who has since become a genuine mentor to me — went through his course, had my own discovery call, brought my wife in, and we started our first policy in May 2023. The moment I knew this was my work came during a live event with Nate and Brandon Braddock, my IBC mentor and business partner — <strong>something shifted. I knew I was supposed to be part of this.</strong></p>
         <p>That's why I built this — not to sell you something, but because I wish someone had shown me this sooner.</p>
       </div>
       <div class="about-sig"><strong>— Kevin</strong>Richey Insurance Solutions</div>
@@ -557,7 +554,7 @@ footer {
       <div class="v-card"><h4>Integrity Above All</h4><p>We recommend what's right for you, even when that means a smaller commission or a longer conversation. Your interests come first — always.</p></div>
       <div class="v-card"><h4>Education as Foundation</h4><p>Clients who understand their plans make better decisions and stick with their strategy. We invest in that understanding before anything else.</p></div>
       <div class="v-card"><h4>Long-Term Partnership</h4><p>Your life changes. Your coverage should too. We're here for every milestone — not just the first signature.</p></div>
-      <div class="v-card"><h4>Independence &amp; Objectivity</h4><p>We work with established mutual insurance companies that have paid dividends for over a century, focusing on policies designed for long-term growth, stability, and control.</p></div>
+      <div class="v-card"><h4>Independence &amp; Objectivity</h4><p>We're not captive to any carrier. We shop the market on your behalf and recommend what genuinely fits your situation.</p></div>
     </div>
   </section>
 
@@ -566,86 +563,137 @@ footer {
 <!-- ════════ SERVICES ════════ -->
 <div id="page-services" class="page">
 
+  <!-- Hero -->
   <div class="services-hero">
-    <div class="section-label">What We Offer</div>
-    <h1>Comprehensive<br><em>Solutions</em></h1>
-    <p>Insurance and financial strategies designed around your life, your goals, and your family — not a product brochure.</p>
+    <div class="section-label">How We Help</div>
+    <h1>Strategy First.<br><em>Always.</em></h1>
+    <p>Financial strategy shouldn't feel confusing, sales-driven, or disconnected from real life. We take a different approach — one built on education, control, and long-term thinking. Before we recommend anything, we help you understand how money actually works.</p>
   </div>
 
-  <section class="services-list">
-    <div class="s-row">
-      <div class="s-icon-block"><span class="icon">🛡️</span><h4>Life Insurance</h4></div>
-      <div class="s-detail">
-        <h3>Life Insurance Solutions</h3>
-        <p>Life insurance is the foundation of any sound financial plan. We focus on term and dividend-paying whole life insurance — the tools endorsed by the Nelson Nash Institute as the proper vehicles for the Infinite Banking Concept.</p>
-        <ul class="s-bullets">
-          <li>Term life for straightforward, affordable income replacement</li>
-          <li>Dividend-paying whole life — the cornerstone of the IBC strategy</li>
-          <li>Policy design optimized for high early cash value (not just death benefit)</li>
-          <li>Policy comparison across multiple Nelson Nash Institute-aligned carriers</li>
-          <li>Underwriting guidance to qualify at the best rate class</li>
-        </ul>
+  <!-- Philosophy section -->
+  <section style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 48px 56px;">
+    <div class="section-label">Our Philosophy</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="v-card">
+        <h4>Education Before Recommendation</h4>
+        <p>You deserve to understand why something works before you implement it. We teach first — so you can make confident, informed decisions.</p>
       </div>
-    </div>
-    <div class="s-row">
-      <div class="s-icon-block"><span class="icon">🏦</span><h4>Infinite Banking</h4></div>
-      <div class="s-detail">
-        <h3>Infinite Banking Concept</h3>
-        <p>As taught by R. Nelson Nash in <em>Becoming Your Own Banker</em>, the IBC is a way of thinking about how you use money — not just a product. It uses dividend-paying whole life insurance from mutually-owned companies as the vehicle to recapture the financing function in your life.</p>
-        <ul class="s-bullets">
-          <li>Policy design following Nelson Nash Institute principles — not Wall Street products</li>
-          <li>Dividend-paying whole life only — no IUL, no variable products</li>
-          <li>Education-first approach grounded in Nash's original teachings</li>
-          <li>Multi-generational family banking system design</li>
-          <li>Business IBC strategies for entrepreneurs and owners</li>
-        </ul>
+      <div class="v-card">
+        <h4>Strategy Over Products</h4>
+        <p>We don't lead with products — we lead with strategy. Every recommendation is designed to improve control, liquidity, and long-term efficiency.</p>
       </div>
-    </div>
-    <div class="s-row">
-      <div class="s-icon-block"><span class="icon">🏢</span><h4>Business Solutions</h4></div>
-      <div class="s-detail">
-        <h3>Business Protection &amp; Benefits</h3>
-        <p>Your business is one of your most valuable assets. We help protect it from the loss of a key person, fund buy-sell agreements, and attract top talent through executive benefit strategies.</p>
-        <ul class="s-bullets">
-          <li>Key person life and disability insurance</li>
-          <li>Buy-sell agreement funding strategies</li>
-          <li>Executive bonus and deferred compensation plans</li>
-          <li>Group life and benefits consultation</li>
-        </ul>
+      <div class="v-card">
+        <h4>Built on Proven Principles</h4>
+        <p>Our approach is grounded in the principles taught by R. Nelson Nash and the Infinite Banking Concept — focused on reclaiming the financing function in your life using time-tested tools.</p>
       </div>
-    </div>
-    <div class="s-row">
-      <div class="s-icon-block"><span class="icon">🌱</span><h4>Legacy Planning</h4></div>
-      <div class="s-detail">
-        <h3>Legacy &amp; Estate Strategies</h3>
-        <p>Life insurance is one of the most tax-efficient tools for transferring wealth. We help you structure policies that maximize the legacy you leave — beyond just a death benefit.</p>
-        <ul class="s-bullets">
-          <li>Tax-free wealth transfer strategies</li>
-          <li>ILIT coordination with estate attorneys</li>
-          <li>Second-to-die policies for estate equalization</li>
-          <li>Charitable giving strategies using life insurance</li>
-        </ul>
+      <div class="v-card">
+        <h4>Mutual Alignment</h4>
+        <p>We implement these same strategies in our own lives. This isn't theory — it's how we manage our own money. Skin in the game matters.</p>
       </div>
-    </div>
-    <div class="s-row">
-      <div class="s-icon-block"><span class="icon">📊</span><h4>Annuities</h4></div>
-      <div class="s-detail">
-        <h3>Annuities &amp; Retirement Income</h3>
-        <p>For clients approaching or in retirement, annuities provide a guaranteed income stream you cannot outlive. We identify when and how they fit your overall income plan.</p>
-        <ul class="s-bullets">
-          <li>Fixed and fixed-indexed annuity analysis</li>
-          <li>Income rider evaluation and comparison</li>
-          <li>Rollover and 1035 exchange guidance</li>
-          <li>Integration with Social Security and other income sources</li>
-        </ul>
+      <div class="v-card" style="grid-column:1/-1;">
+        <h4>Designed to Complement, Not Replace</h4>
+        <p>This approach is meant to strengthen what you're already doing — not disrupt it. We help your financial life work together more efficiently, building on what you have rather than tearing it down.</p>
       </div>
     </div>
   </section>
 
-  <div style="position:relative;z-index:1;text-align:center;padding:0 48px 80px;margin-top:-20px;">
-    <p style="font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:24px;font-weight:300;">Every situation is unique. Let's talk through yours and find the right starting point.</p>
-    <a href="https://vault.unlimitedlifeconcepts.com/book-with-kevin" target="_blank" class="btn-primary">📅 Book a Free Discovery Call</a>
-  </div>
+  <div style="position:relative;z-index:1;" class="inner"><div class="divider" style="margin:0 0 0;"></div></div>
+
+  <!-- Services list -->
+  <section class="services-list">
+
+    <div class="s-row">
+      <div class="s-icon-block"><span class="icon">🏦</span><h4>Infinite Banking</h4></div>
+      <div class="s-detail">
+        <h3>Infinite Banking Strategy</h3>
+        <p>The Infinite Banking Concept (IBC) is a way of thinking about money — not just a product. Using properly designed, dividend-paying whole life insurance from mutually-owned companies, we help you take back control of the financing function in your life. As taught by R. Nelson Nash in <em>Becoming Your Own Banker</em> — the approach our mentors Nate Dean and Brandon Braddock have helped us master and now pass on to our clients.</p>
+        <ul class="s-bullets">
+          <li>Policy design aligned with Infinite Banking principles</li>
+          <li>Focus on high early cash value and long-term performance</li>
+          <li>Education on how to use your policy as a financial system</li>
+          <li>Multi-policy and multi-generational strategy design</li>
+          <li>Business applications for owners and entrepreneurs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="s-row">
+      <div class="s-icon-block"><span class="icon">🛡️</span><h4>Life Insurance</h4></div>
+      <div class="s-detail">
+        <h3>Life Insurance Solutions</h3>
+        <p>Life insurance is the foundation of a sound financial strategy — but only when it's designed properly. We focus on term and dividend-paying whole life insurance structured to support both protection and long-term financial efficiency. Not just a death benefit — a living financial tool.</p>
+        <ul class="s-bullets">
+          <li>Term life for affordable income protection</li>
+          <li>Dividend-paying whole life designed for cash value growth</li>
+          <li>Policy structuring optimized for efficiency — not just death benefit</li>
+          <li>Guidance through underwriting to secure the best possible rate class</li>
+          <li>Access to top mutual insurance companies with long-standing dividend histories</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="s-row">
+      <div class="s-icon-block"><span class="icon">🏢</span><h4>Business Strategy</h4></div>
+      <div class="s-detail">
+        <h3>Business Protection &amp; Strategy</h3>
+        <p>Your business is one of your most valuable assets — and often the most exposed. We help business owners create strategies that protect, stabilize, and strengthen their operations over time. Because a business that depends entirely on you has a single point of failure.</p>
+        <ul class="s-bullets">
+          <li>Key person protection strategies</li>
+          <li>Buy-sell agreement funding</li>
+          <li>Executive bonus and retention strategies</li>
+          <li>Business-focused Infinite Banking implementation</li>
+          <li>Cash flow and capital access strategies for owners</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="s-row">
+      <div class="s-icon-block"><span class="icon">🌱</span><h4>Legacy Planning</h4></div>
+      <div class="s-detail">
+        <h3>Legacy &amp; Estate Planning</h3>
+        <p>True wealth isn't just what you build — it's what you pass on. Life insurance remains one of the most efficient tools for transferring wealth, when structured intentionally. We help you design a legacy that lasts beyond your lifetime.</p>
+        <ul class="s-bullets">
+          <li>Tax-efficient wealth transfer strategies</li>
+          <li>Coordination with estate planning attorneys</li>
+          <li>Second-to-die policy strategies</li>
+          <li>Charitable giving strategies using life insurance</li>
+          <li>Legacy planning built for long-term impact</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- What it's like to work with us -->
+  <section style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 48px 40px;">
+    <div style="background:linear-gradient(135deg,var(--navy-light),var(--navy-mid));border:1px solid rgba(46,134,222,0.25);border-radius:4px;padding:48px;">
+      <div class="section-label">What It's Like to Work With Us</div>
+      <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:16px;">A relationship, not a transaction.</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:28px;max-width:600px;">We start with a conversation, not a product pitch. From there we help you understand your current financial picture, identify opportunities for improvement, design a strategy aligned with your goals, and implement with clarity and confidence.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Understand your current picture</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Identify opportunities</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Design a strategy aligned with your goals</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Implement with clarity and confidence</span>
+        </div>
+      </div>
+      <a href="https://vault.unlimitedlifeconcepts.com/book-with-kevin" target="_blank" class="btn-primary">Start With a Free Conversation →</a>
+      <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.35);">No pressure. No assumptions. Just clarity.</div>
+    </div>
+  </section>
+
+  <div style="height:80px;"></div>
 
 </div>
 
