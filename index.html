@@ -310,11 +310,11 @@ h1, h2 {
 .cal-box { background:linear-gradient(135deg,var(--navy-light),var(--navy-mid));border:1px solid rgba(46,134,222,0.25);border-radius:4px;padding:48px; }
 .cal-box h3 { font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;color:white; }
 .cal-box > p { font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:32px; }
-.cal-inner { background:rgba(255,255,255,0.04);border:2px dashed rgba(46,134,222,0.25);border-radius:4px;padding:48px 32px;text-align:center; }
-.cal-icon-big { font-size:48px;display:block;margin-bottom:16px; }
-.cal-inner strong { display:block;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:white;margin-bottom:10px; }
-.cal-inner p { font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:4px; }
-.cal-note { font-size:12px!important;color:rgba(46,134,222,0.6)!important;font-style:italic; }
+
+/* SuiteDash form override — force it to match RIS brand */
+.suitedash-form-wrap { background:rgba(255,255,255,0.04);border:1px solid rgba(46,134,222,0.2);border-radius:4px;overflow:hidden; }
+.suitedash-form-wrap iframe { display:block;width:100%;border:none; }
+
 .contact-note { margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.07);font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65; }
 
 /* ── FOOTER ── */
@@ -389,6 +389,7 @@ footer {
     <li><a onclick="showPage('services')">Services</a></li>
     <li><a onclick="showPage('ibc')">Infinite Banking</a></li>
     <li><a onclick="showPage('home'); setTimeout(()=>document.getElementById('free-tools').scrollIntoView({behavior:'smooth'}),120)">Free Tools</a></li>
+    <li><a onclick="showPage('contact')">Contact</a></li>
     <li><a href="https://vault.unlimitedlifeconcepts.com/book-with-kevin" target="_blank" class="nav-cta">Book a Call</a></li>
   </ul>
 </nav>
@@ -450,8 +451,6 @@ footer {
     <div class="section-label">Free Resources</div>
     <h2 style="font-size:clamp(26px,3.5vw,38px);margin-bottom:0;">Start here — <em style="font-style:normal;color:var(--blue);">no obligation</em></h2>
     <div class="tools-grid">
-
-      <!-- Tool Card 1: Cash Flow Clarity Tool -->
       <div class="tool-card">
         <div class="tool-badge">⚡ Free Assessment</div>
         <h4>Cash Flow Clarity Tool</h4>
@@ -459,8 +458,6 @@ footer {
         <a href="https://tool.richeyinsurancesolutions.com" target="_blank" class="tool-btn">Take the Assessment →</a>
         <div class="tool-free">Free · Private · Instant results</div>
       </div>
-
-      <!-- Tool Card 2: Mini-Course -->
       <div class="tool-card">
         <div class="tool-badge">📬 Free Email Series</div>
         <h4>5 Cash Flow Principles That Change Everything</h4>
@@ -468,7 +465,6 @@ footer {
         <a href="https://richeyinsurancesolutions.com/mini-course" target="_blank" class="tool-btn">Get the Mini-Course →</a>
         <div class="tool-free">Free · No spam · Unsubscribe anytime</div>
       </div>
-
     </div>
   </section>
 
@@ -538,7 +534,7 @@ footer {
         <p>I started where a lot of people start — following Dave Ramsey's baby steps, working toward debt freedom, doing everything I was supposed to do. Then life got hard. <strong>Six kids, an economic crisis, and a plan that wasn't built for what actually happens.</strong> It took years to recover and find stability again.</p>
         <div class="pull-quote">"It wasn't a new budget strategy that pulled me forward. It was a shift in how I thought about money itself."</div>
         <p>It started small — using credit cards strategically for rewards and realizing there was more leverage available than I'd been taught to look for. That cracked the door open. In 2022, my brother-in-law handed me <em>Becoming Your Own Banker</em> by R. Nelson Nash. I read it. Then I read it again.</p>
-        <p>I found Nate Dean — one of the most respected IBC educators in the country and someone who has since become a genuine mentor to me — went through his course, had my own discovery call, brought my wife in, and we started our first policy in May 2023. The moment I knew this was my work came during a live event. I heard Brandon say that he loved talking to the people he works with. — <strong>something shifted. I knew I was supposed to be part of this.</strong></p>
+        <p>I found Nate Dean — one of the most respected IBC educators in the country and someone who has since become a genuine mentor to me — went through his course, had my own discovery call, brought my wife in, and we started our first policy in May 2023. The moment I knew this was my work came during a live event with Nate and Brandon, my IBC mentor and business partner — <strong>something shifted. I knew I was supposed to be part of this.</strong></p>
         <p>That's why I built this — not to sell you something, but because I wish someone had shown me this sooner.</p>
       </div>
       <div class="about-sig"><strong>— Kevin</strong>Richey Insurance Solutions</div>
@@ -563,14 +559,12 @@ footer {
 <!-- ════════ SERVICES ════════ -->
 <div id="page-services" class="page">
 
-  <!-- Hero -->
   <div class="services-hero">
     <div class="section-label">How We Help</div>
     <h1>Strategy First.<br><em>Always.</em></h1>
     <p>Financial strategy shouldn't feel confusing, sales-driven, or disconnected from real life. We take a different approach — one built on education, control, and long-term thinking. Before we recommend anything, we help you understand how money actually works.</p>
   </div>
 
-  <!-- Philosophy section -->
   <section style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 48px 56px;">
     <div class="section-label">Our Philosophy</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
@@ -599,14 +593,12 @@ footer {
 
   <div style="position:relative;z-index:1;" class="inner"><div class="divider" style="margin:0 0 0;"></div></div>
 
-  <!-- Services list -->
   <section class="services-list">
-
     <div class="s-row">
       <div class="s-icon-block"><span class="icon">🏦</span><h4>Infinite Banking</h4></div>
       <div class="s-detail">
         <h3>Infinite Banking Strategy</h3>
-        <p>The Infinite Banking Concept (IBC) is a way of thinking about money — not just a product. Using properly designed, dividend-paying whole life insurance from mutually-owned companies, we help you take back control of the financing function in your life. As taught by R. Nelson Nash in <em>Becoming Your Own Banker</em> — the approach our mentors Nate Dean and Brandon Goswick have helped us master and now pass on to our clients.</p>
+        <p>The Infinite Banking Concept (IBC) is a way of thinking about money — not just a product. Using properly designed, dividend-paying whole life insurance from mutually-owned companies, we help you take back control of the financing function in your life. As taught by R. Nelson Nash in <em>Becoming Your Own Banker</em> — the approach our mentors Nate Dean and Brandon have helped us master and now pass on to our clients.</p>
         <ul class="s-bullets">
           <li>Policy design aligned with Infinite Banking principles</li>
           <li>Focus on long-term performance</li>
@@ -616,14 +608,13 @@ footer {
         </ul>
       </div>
     </div>
-
     <div class="s-row">
       <div class="s-icon-block"><span class="icon">🛡️</span><h4>Life Insurance</h4></div>
       <div class="s-detail">
         <h3>Life Insurance Solutions</h3>
-        <p>Your most valuable asset isn’t your home or your investments—it’s your ability to earn income. We help you protect that Human Life Value first, then design term and dividend-paying whole life insurance to support both protection and long-term financial efficiency. Not just a death benefit, a living financial tool.</p>
+        <p>Your most valuable asset isn't your home or your investments — it's your ability to earn income. We help you protect that Human Life Value first, then design term and dividend-paying whole life insurance to support both protection and long-term financial efficiency. Not just a death benefit — a living financial tool.</p>
         <ul class="s-bullets">
-          <li>Convertible Term life for affordable income protection</li>
+          <li>Convertible term life for affordable income protection</li>
           <li>Dividend-paying whole life designed for cash value growth</li>
           <li>Policy structuring optimized for efficiency — not just death benefit</li>
           <li>Guidance through underwriting to secure the best possible rate class</li>
@@ -631,7 +622,6 @@ footer {
         </ul>
       </div>
     </div>
-
     <div class="s-row">
       <div class="s-icon-block"><span class="icon">🏢</span><h4>Business Strategy</h4></div>
       <div class="s-detail">
@@ -646,7 +636,6 @@ footer {
         </ul>
       </div>
     </div>
-
     <div class="s-row">
       <div class="s-icon-block"><span class="icon">🌱</span><h4>Legacy Planning</h4></div>
       <div class="s-detail">
@@ -661,38 +650,23 @@ footer {
         </ul>
       </div>
     </div>
-
   </section>
 
-  <!-- What it's like to work with us -->
   <section style="position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 48px 40px;">
     <div style="background:linear-gradient(135deg,var(--navy-light),var(--navy-mid));border:1px solid rgba(46,134,222,0.25);border-radius:4px;padding:48px;">
       <div class="section-label">What It's Like to Work With Us</div>
       <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:16px;">A relationship, not a transaction.</h2>
       <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:28px;max-width:600px;">We start with a conversation, not a product pitch. From there we help you understand your current financial picture, identify opportunities for improvement, design a strategy aligned with your goals, and implement with clarity and confidence.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px;">
-        <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
-          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Understand your current picture</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
-          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Identify opportunities</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
-          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Design a strategy aligned with your goals</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
-          <span style="font-size:14px;color:rgba(255,255,255,0.75);">Implement with clarity and confidence</span>
-        </div>
+        <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,0.75);">Understand your current picture</span></div>
+        <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,0.75);">Identify opportunities</span></div>
+        <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,0.75);">Design a strategy aligned with your goals</span></div>
+        <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,0.75);">Implement with clarity and confidence</span></div>
       </div>
       <a href="https://vault.unlimitedlifeconcepts.com/book-with-kevin" target="_blank" class="btn-primary">Start With a Free Conversation →</a>
       <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.35);">No pressure. No assumptions. Just clarity.</div>
     </div>
   </section>
-
   <div style="height:80px;"></div>
 
 </div>
@@ -720,7 +694,7 @@ footer {
   </section>
 
   <section class="ibc-benefits">
-    <div class="section-label">Why this Approach Works</div>
+    <div class="section-label">Why This Approach Works</div>
     <h2>Why IBC changes<br>the <em>financial equation</em></h2>
     <div class="ib-grid">
       <div class="ib-card"><span class="ib-icon">📈</span><h4>Guaranteed Growth</h4><p>Dividend-paying whole life from a mutual company grows at a guaranteed rate plus non-guaranteed dividends — completely disconnected from market volatility.</p></div>
@@ -772,13 +746,15 @@ footer {
     <div class="cal-box">
       <h3>Book a Free Consultation</h3>
       <p>Select a time that works for you — 30 minutes, no obligation, no pressure.</p>
-      <div class="cal-inner">
-        <span class="cal-icon-big">📅</span>
-        <strong>Schedule Your Discovery Call</strong>
-        <p>Click below to open our live scheduling calendar.</p>
-        
-        <a href="https://vault.unlimitedlifeconcepts.com/book-with-kevin" target="_blank" class="btn-primary" style="margin-top:20px;">Book Your Discovery Call →</a>
+
+      <!-- SuiteDash Booking Form Embed -->
+      <div class="suitedash-form-wrap">
+        <script src="https://vault.unlimitedlifeconcepts.com/frm/2snGyacADxa23dTws.js"></script>
+        <div style="min-height:600px;display:flex;align-items:center;justify-content:center;" id="sd-form-fallback">
+          {{form id="2snGyacADxa23dTws"}}
+        </div>
       </div>
+
       <div class="contact-note">
         💡 <strong style="color:rgba(255,255,255,0.75);">What to expect:</strong> We'll ask a few questions about your current situation, walk through your goals, and share what options might make sense. You'll leave with clarity — not a hard sell.
       </div>
@@ -803,7 +779,6 @@ footer {
   </nav>
   <div class="footer-tagline">Your Wealth, Your Way</div>
 </footer>
-
 
 <script>
 function showPage(id) {
