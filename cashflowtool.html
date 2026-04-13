@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#0A1628"/>
+<title>Cash Flow Clarity — Richey Insurance Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & ROOT ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0A1628;--navy-mid:#0F2040;--navy-light:#162B52;
+  --blue:#2E86DE;--blue-hi:#4FA3F7;--blue-dim:#1A5099;--blue-pale:#0D2848;
+  --white:#FFFFFF;--sub:#8BA3BF;--dim:#4A6080;--muted:#6A85A0;
+  --green:#1DB954;--green-pale:#0A2818;
+  --yellow:#F5A623;--yellow-pale:#2A1E08;
+  --red:#E5383B;--red-pale:#2A0A0A;
+  --border:#1A3460;--border-hi:#2450A0;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--navy);color:var(--white);
+  font-family:'Barlow',sans-serif;font-weight:400;line-height:1.6;
+  overflow-x:hidden;min-height:100vh;
+}
+
+/* ── SCREENS ── */
+.screen{display:none;}
+.screen.active{display:block;}
+
+/* ── GEO BACKGROUND ── */
+.geo{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.geo::before{
+  content:'';position:absolute;top:-20%;right:-10%;width:70vw;height:70vw;
+  background:linear-gradient(135deg,rgba(46,134,222,0.07) 0%,transparent 60%);
+  transform:rotate(-15deg);border-radius:4px;
+}
+.geo::after{
+  content:'';position:absolute;bottom:-10%;left:-15%;width:60vw;height:60vw;
+  background:linear-gradient(135deg,rgba(46,134,222,0.05) 0%,transparent 60%);
+  transform:rotate(20deg);border-radius:4px;
+}
+.stripe{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:repeating-linear-gradient(-55deg,transparent,transparent 120px,
+    rgba(46,134,222,0.018) 120px,rgba(46,134,222,0.018) 121px);
+}
+
+/* ── HEADER ── */
+header{
+  position:relative;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;height:52px;
+  background:rgba(6,15,26,0.95);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(8px);
+}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo svg{width:20px;height:20px;flex-shrink:0;}
+.logo-text{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);font-weight:600;font-family:'Barlow',sans-serif;line-height:1;}
+.header-tag{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);font-family:'Barlow',sans-serif;}
+
+/* ── PROGRESS BAR ── */
+.progress{display:flex;gap:4px;margin-bottom:28px;}
+.progress-seg{flex:1;height:2px;border-radius:1px;background:var(--border);transition:background 0.3s;}
+.progress-seg.done{background:var(--blue);}
+
+/* ── SHARED LAYOUT ── */
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:44px 28px 60px;}
+.wrap-wide{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:44px 28px 60px;}
+.wrap-landing{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:60px 28px 60px;}
+
+/* ── TYPOGRAPHY ── */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--blue);font-weight:600;margin-bottom:18px;
+}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--blue);flex-shrink:0;}
+h1.hero{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:clamp(32px,8vw,68px);line-height:1.0;
+  letter-spacing:-0.01em;margin-bottom:18px;color:var(--white);
+}
+h1.hero .accent{display:block;color:var(--blue);}
+h1.hero .ghost{display:block;-webkit-text-stroke:1.5px rgba(255,255,255,0.22);color:transparent;}
+h2.section{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(20px,5vw,30px);letter-spacing:0.02em;
+  color:var(--white);margin-bottom:8px;text-transform:uppercase;
+}
+h2.section em{font-style:normal;color:var(--blue);}
+.step-label{font-size:10px;color:var(--dim);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+h2.step-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(22px,5vw,30px);color:var(--white);
+  letter-spacing:0.02em;margin-bottom:8px;text-transform:uppercase;
+}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:22px;}
+
+/* ── CARDS ── */
+.card{
+  background:var(--navy-mid);border:1px solid var(--border);
+  border-radius:8px;padding:20px;position:relative;overflow:hidden;
+}
+.card.accent::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),transparent);
+}
+.card.hi{border-color:var(--border-hi);}
+
+/* ── INFO BOX ── */
+.info-box{
+  background:var(--blue-pale);border:1px solid var(--blue-dim);
+  border-radius:5px;padding:10px 14px;font-size:12px;color:var(--sub);
+  line-height:1.5;margin-top:10px;margin-bottom:16px;
+}
+
+/* ── FORM FIELDS ── */
+.field{margin-bottom:14px;}
+.field label{
+  display:block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:5px;font-weight:500;
+}
+.field label span{color:var(--dim);text-transform:none;letter-spacing:0;margin-left:4px;}
+.input-wrap{position:relative;}
+.prefix{
+  position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  font-size:13px;color:var(--dim);pointer-events:none;
+}
+.field input{
+  width:100%;background:var(--navy);border:1px solid var(--border);
+  border-radius:5px;padding:10px 10px 10px 22px;
+  color:var(--white);font-size:15px;font-family:'Barlow',sans-serif;
+  outline:none;transition:border-color 0.15s;
+  -webkit-appearance:none;appearance:none;
+}
+.field input.no-prefix{padding-left:10px;}
+.field input:focus{border-color:var(--blue);}
+.field input::placeholder{color:var(--border-hi);}
+input[type=number]{-moz-appearance:textfield;}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}
+
+/* ── SECTION DIVIDER IN FORM ── */
+.form-divider{height:1px;background:var(--border);margin:6px 0 14px;}
+.form-section-label{
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  font-weight:600;margin-bottom:10px;
+}
+.form-section-label.green{color:var(--green);}
+.form-section-label.yellow{color:var(--yellow);}
+
+/* ── TWO COLUMN GRID ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+/* ── BUTTONS ── */
+.btn-primary{
+  display:block;width:100%;
+  background:var(--blue);color:var(--white);border:none;
+  border-radius:5px;padding:14px 28px;
+  font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  cursor:pointer;text-align:center;text-decoration:none;
+  transition:background 0.2s;-webkit-tap-highlight-color:transparent;
+}
+.btn-primary:hover{background:var(--blue-hi);}
+.btn-ghost{
+  display:block;width:100%;
+  background:transparent;color:var(--sub);
+  border:1px solid var(--border);border-radius:5px;
+  padding:13px 28px;
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:0.06em;text-transform:uppercase;
+  cursor:pointer;text-align:center;text-decoration:none;
+  transition:all 0.15s;-webkit-tap-highlight-color:transparent;
+}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue-hi);}
+.btn-row{display:flex;gap:10px;margin-top:16px;}
+.btn-row .btn-back{
+  flex:1;background:transparent;color:var(--muted);
+  border:1px solid var(--border);border-radius:5px;padding:12px;
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:0.06em;text-transform:uppercase;
+  cursor:pointer;transition:all 0.15s;
+}
+.btn-row .btn-back:hover{border-color:var(--blue);color:var(--blue);}
+.btn-row .btn-next{flex:2;}
+.hint{margin-top:10px;font-size:11px;color:var(--dim);text-align:center;}
+
+/* ── PROCESSING ── */
+#screen-processing{
+  display:none;align-items:center;justify-content:center;min-height:60vh;
+}
+#screen-processing.active{display:flex;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
+.spinner{width:44px;height:44px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .85s linear infinite;margin:0 auto 20px;}
+
+/* ── SCORE RING ── */
+.score-ring-wrap{display:flex;flex-direction:column;align-items:center;gap:7px;}
+.score-ring-label{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+@keyframes ring-fill{from{stroke-dashoffset:239;}to{stroke-dashoffset:var(--target);}}
+
+/* ── RESULTS ── */
+.score-header{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:14px;}
+.problem-card{
+  background:var(--navy-mid);border:1px solid var(--border);
+  border-left:4px solid var(--blue);border-radius:6px;
+  padding:18px 20px;margin-bottom:10px;
+}
+.problem-num{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--dim);letter-spacing:0.1em;margin-right:10px;}
+.problem-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--white);letter-spacing:0.04em;}
+.problem-headline{font-family:'Barlow Condensed',sans-serif;font-size:15px;margin:8px 0;}
+.problem-detail{font-size:13px;color:var(--sub);line-height:1.65;}
+.badge{
+  font-size:10px;font-weight:600;padding:3px 10px;border-radius:3px;
+  font-family:'Barlow',sans-serif;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;
+}
+
+/* ── EXPENSE BARS ── */
+.exp-row{margin-bottom:8px;}
+.exp-meta{display:flex;justify-content:space-between;margin-bottom:3px;font-size:12px;}
+.exp-meta span:first-child{color:var(--white);}
+.exp-meta span:last-child{color:var(--muted);}
+.exp-track{height:3px;background:var(--border);border-radius:1px;}
+.exp-fill{height:3px;border-radius:1px;transition:width 1s ease;}
+
+/* ── INSIGHT PILLS ── */
+.insight{
+  border-left:3px solid var(--blue);border-radius:4px;
+  padding:11px 14px;font-size:13px;color:var(--white);
+  line-height:1.65;margin-bottom:8px;
+}
+
+/* ── CTA CARD ── */
+.cta-card{
+  background:linear-gradient(135deg,var(--navy-light),var(--navy-mid));
+  border:1px solid var(--border-hi);border-radius:8px;padding:24px;
+  position:relative;overflow:hidden;margin-bottom:14px;
+}
+.cta-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),transparent);
+}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(18px,4vw,22px);font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;text-transform:uppercase;}
+.cta-body{font-size:14px;color:var(--sub);line-height:1.7;margin-bottom:18px;}
+.cta-note{font-size:11px;color:var(--dim);text-align:center;margin-top:8px;}
+
+/* ── BRIDGE ── */
+.bridge-beat{margin-bottom:32px;}
+.bridge-eyebrow{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.bridge-eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--blue);flex-shrink:0;}
+.bridge-body{font-size:15px;line-height:1.75;color:var(--sub);}
+.bridge-divider{height:1px;background:var(--border);margin-bottom:32px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.compare-col{border-radius:6px;padding:16px;}
+.compare-col-label{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;}
+.compare-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;}
+.compare-icon{font-size:11px;margin-top:2px;flex-shrink:0;}
+.compare-text{font-size:12px;color:var(--sub);line-height:1.5;}
+.mini-course-card{
+  background:var(--blue-pale);border:1px solid var(--blue-dim);
+  border-radius:6px;padding:18px 20px;margin-top:4px;
+}
+.mini-course-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:6px;}
+.mini-course-title{font-size:14px;color:var(--white);font-weight:500;margin-bottom:4px;}
+.mini-course-desc{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+.btn-outline-blue{
+  display:block;width:100%;
+  background:transparent;color:var(--blue);
+  border:1px solid var(--blue);border-radius:5px;
+  padding:11px 20px;
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  cursor:pointer;text-align:center;text-decoration:none;
+  transition:all 0.15s;
+}
+.btn-outline-blue:hover{background:var(--blue);color:var(--white);}
+.trust-note{font-size:11px;color:var(--dim);text-align:center;margin-top:8px;}
+
+/* ── SECTION LABELS ── */
+.section-label{
+  font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px;
+}
+
+/* ── RESULTS SURPLUS ── */
+.surplus-line{margin-top:10px;font-size:13px;}
+
+/* ── BACK LINK ── */
+.back-link{
+  display:block;text-align:center;margin:20px auto 0;
+  font-size:12px;color:var(--dim);cursor:pointer;
+  background:none;border:none;font-family:'Barlow',sans-serif;
+  transition:color 0.15s;
+}
+.back-link:hover{color:var(--muted);}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(46,134,222,0.1);
+  padding:20px 28px;text-align:center;
+  font-size:11px;color:var(--dim);
+}
+
+/* ═══════════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════════ */
+@media(max-width:600px){
+  header{padding:0 16px;}
+  .header-tag{display:none;}
+  .logo-text{font-size:9px;}
+
+  .wrap,.wrap-wide,.wrap-landing{padding:28px 18px 48px;}
+
+  h1.hero{font-size:clamp(28px,9vw,42px);margin-bottom:14px;}
+  .wrap-landing .eyebrow{margin-bottom:12px;}
+
+  .score-header{flex-direction:column;align-items:center;text-align:center;}
+  .score-header > div:last-child{text-align:center !important;}
+
+  .two-col{grid-template-columns:1fr;}
+
+  .compare-grid{grid-template-columns:1fr;}
+
+  .btn-row{flex-direction:row;}
+
+  h2.step-title{font-size:22px;}
+
+  .problem-detail{font-size:12px;}
+
+  .cta-card{padding:18px;}
+
+  .mini-course-card{padding:14px 16px;}
+
+  footer{padding:16px 18px;}
+}
+
+@media(max-width:380px){
+  h1.hero{font-size:28px;}
+  .wrap,.wrap-wide,.wrap-landing{padding:24px 14px 40px;}
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.fade-up{opacity:0;animation:fadeUp 0.5s ease forwards;}
+.d1{animation-delay:0.05s;}.d2{animation-delay:0.18s;}
+.d3{animation-delay:0.32s;}.d4{animation-delay:0.46s;}
+.d5{animation-delay:0.60s;}
+</style>
+</head>
+<body>
+<div class="geo"></div>
+<div class="stripe"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 32 32" fill="none">
+      <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+      <polygon points="16,7 25,12 25,20 16,25 7,20 7,12" fill="#FFFFFF" opacity="0.12"/>
+      <circle cx="16" cy="17" r="3" fill="#FFFFFF"/>
+    </svg>
+    <span class="logo-text">Richey Insurance Solutions</span>
+  </div>
+  <span class="header-tag">Your Wealth, Your Way</span>
+</header>
+
+<!-- ═══ SCREEN: LANDING ═══ -->
+<div id="screen-landing" class="screen active">
+  <div class="wrap-landing">
+    <div class="eyebrow fade-up d1">Cash Flow Assessment</div>
+    <h1 class="hero fade-up d2">
+      <span>You Don't Have</span>
+      <span class="accent">A Money Problem.</span>
+    </h1>
+    <p style="font-size:17px;line-height:1.7;color:var(--sub);font-weight:300;margin-bottom:14px;" class="fade-up d3">
+      Most people assume the answer is earning more. But the real issue is almost never the amount — it's the <strong style="color:var(--white);font-weight:500;">system</strong> your money moves through.
+    </p>
+    <p style="font-size:14px;line-height:1.65;color:var(--muted);margin-bottom:32px;" class="fade-up d4">
+      This 5-minute assessment scores your cash flow and identifies three structural problems that keep most households financially stuck — regardless of income.
+    </p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:32px;" class="fade-up d4">
+      <div style="display:flex;align-items:center;gap:7px;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
+        <div><div style="font-size:13px;font-weight:500;color:var(--white);">~5 minutes</div><div style="font-size:11px;color:var(--dim);">Step-by-step</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
+        <div><div style="font-size:13px;font-weight:500;color:var(--white);">No account needed</div><div style="font-size:11px;color:var(--dim);">Completely private</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;"></div>
+        <div><div style="font-size:13px;font-weight:500;color:var(--white);">Instant results</div><div style="font-size:11px;color:var(--dim);">Based on your numbers</div></div>
+      </div>
+    </div>
+    <button class="btn-primary fade-up d5" onclick="startAssessment()" style="max-width:360px;">
+      Start the Assessment →
+    </button>
+  </div>
+</div>
+
+<!-- ═══ SCREEN: STEPS ═══ -->
+<div id="screen-steps" class="screen">
+  <div class="wrap">
+    <div class="progress" id="progress-bar"></div>
+    <div class="step-label" id="step-label"></div>
+    <h2 class="step-title" id="step-title"></h2>
+    <p class="step-desc" id="step-desc"></p>
+    <div id="step-note" class="info-box" style="display:none;"></div>
+    <div class="card" id="step-fields"></div>
+    <div class="btn-row" id="step-buttons"></div>
+    <p class="hint">Estimates are fine — this is a diagnostic, not a tax return</p>
+  </div>
+</div>
+
+<!-- ═══ SCREEN: PROCESSING ═══ -->
+<div id="screen-processing" class="screen">
+  <div style="text-align:center;padding:60px 28px;">
+    <div class="spinner"></div>
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;">
+      ANALYZING YOUR CASH FLOW SYSTEM
+    </div>
+    <div style="color:var(--muted);font-size:13px;animation:pulse 2s ease infinite;letter-spacing:0.08em;text-transform:uppercase;">
+      Identifying the three problems
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCREEN: RESULTS ═══ -->
+<div id="screen-results" class="screen">
+  <div class="wrap-wide">
+    <div class="eyebrow" style="margin-bottom:8px;">Your Results</div>
+    <!-- Overall score -->
+    <div class="card accent hi score-header" id="overall-card" style="margin-bottom:14px;">
+      <div id="overall-ring"></div>
+      <div style="flex:1;min-width:180px;">
+        <div class="cta-title" id="overall-label" style="margin-bottom:8px;"></div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.65;" id="overall-desc"></div>
+        <div class="surplus-line" id="surplus-line"></div>
+      </div>
+    </div>
+    <!-- Three problems -->
+    <div class="section-label" style="margin-bottom:12px;">The Three Problems In Your Numbers</div>
+    <div id="problems-section"></div>
+    <!-- Expense bars -->
+    <div class="card" id="expenses-section" style="margin-bottom:14px;display:none;">
+      <div class="section-label" style="margin-bottom:14px;">Where Your Income Goes</div>
+      <div id="expense-bars"></div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;">
+        <span style="font-size:13px;color:var(--muted);">Total Monthly Expenses</span>
+        <span style="font-size:14px;font-weight:600;color:var(--white);" id="total-exp-label"></span>
+      </div>
+    </div>
+    <!-- Insights -->
+    <div class="section-label" style="margin-bottom:10px;">What This Reveals</div>
+    <div id="insights-section" style="margin-bottom:14px;"></div>
+    <!-- Bridge CTA -->
+    <div class="cta-card">
+      <div class="cta-title">BEFORE YOU GO — ONE MORE THING.</div>
+      <div class="cta-body">Your scores show where the pressure is. But they don't show you why it's structural — or what a different system actually looks like. The next screen does that, in plain language, without jargon or a pitch.</div>
+      <button class="btn-primary" onclick="showScreen('bridge')" style="max-width:100%;">
+        See What a Different System Looks Like →
+      </button>
+      <p class="cta-note">Takes 2 minutes · No obligation · Booking a call is optional</p>
+    </div>
+    <button class="back-link" onclick="resetTool()">← Start over</button>
+  </div>
+</div>
+
+<!-- ═══ SCREEN: BRIDGE ═══ -->
+<div id="screen-bridge" class="screen">
+  <div class="wrap">
+    <!-- Beat 1 -->
+    <div class="bridge-beat">
+      <div class="bridge-eyebrow">First, Something Important</div>
+      <h2 class="step-title" style="font-size:clamp(18px,5vw,26px);margin-bottom:14px;">THERE'S NOTHING WRONG WITH HOW YOU'VE BEEN MANAGING YOUR MONEY.</h2>
+      <p class="bridge-body">You've been doing what most people do — what most financial advisors recommend. Earn, budget, save what's left, pay down debt, put money in a 401k, carry a life insurance policy. It's responsible, conventional thinking. The question isn't whether you've been doing it wrong. The question is whether there's a more efficient system available — one that solves the three problems you just identified without requiring you to earn more or spend less.</p>
+    </div>
+    <div class="bridge-divider"></div>
+    <!-- Beat 2 -->
+    <div class="bridge-beat">
+      <div class="bridge-eyebrow">Here's What Most People Don't Realize</div>
+      <div class="card accent" style="margin-bottom:0;">
+        <p style="font-size:15px;line-height:1.75;color:var(--white);margin-bottom:14px;font-weight:500;">Every dollar you spend is being financed by someone.</p>
+        <p style="font-size:14px;line-height:1.75;color:var(--sub);margin-bottom:14px;">Either you pay interest to a lender — or you give up the interest that dollar could have earned. There's no neutral position. The conventional financial system just doesn't make that visible.</p>
+        <p style="font-size:14px;line-height:1.75;color:var(--sub);">That's the structural problem the three scores you just saw are measuring. Not your income. Not your discipline. The system itself.</p>
+      </div>
+    </div>
+    <div class="bridge-divider"></div>
+    <!-- Beat 3 -->
+    <div class="bridge-beat">
+      <div class="bridge-eyebrow">What a Different System Looks Like</div>
+      <p style="font-size:15px;line-height:1.75;color:var(--sub);margin-bottom:20px;">Instead of saving what's left after everyone else gets paid, imagine redirecting that same money into a private system you own and control — one where your capital stays liquid and accessible, keeps growing even while you use it, and where you set the terms.</p>
+      <div class="compare-grid">
+        <div class="compare-col" style="background:var(--red-pale);border:1px solid rgba(229,56,59,0.15);">
+          <div class="compare-col-label" style="color:var(--red);">Conventional System</div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--red);">×</span><span class="compare-text">Earn → spend → save what's left</span></div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--red);">×</span><span class="compare-text">Lenders set the terms</span></div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--red);">×</span><span class="compare-text">Access requires permission or penalties</span></div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--red);">×</span><span class="compare-text">Interest flows out permanently</span></div>
+        </div>
+        <div class="compare-col" style="background:var(--blue-pale);border:1px solid rgba(46,134,222,0.15);">
+          <div class="compare-col-label" style="color:var(--blue);">A Different System</div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--blue);">→</span><span class="compare-text">Redirect capital into what you own</span></div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--blue);">→</span><span class="compare-text">You set the terms</span></div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--blue);">→</span><span class="compare-text">Access is immediate, no approval needed</span></div>
+          <div class="compare-item"><span class="compare-icon" style="color:var(--blue);">→</span><span class="compare-text">Interest stays inside your system</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bridge-divider"></div>
+    <!-- Beat 4 -->
+    <div class="bridge-beat">
+      <div class="bridge-eyebrow">That System Has a Name</div>
+      <div class="card hi">
+        <p style="font-size:16px;line-height:1.75;color:var(--white);margin-bottom:12px;">It's called <strong style="color:var(--blue);">Infinite Banking Concept (IBC)</strong>.</p>
+        <p style="font-size:14px;line-height:1.75;color:var(--sub);margin-bottom:12px;">It's not an investment product. It's not a retirement account. It's a way of thinking about money — and a specific, time-tested vehicle that makes that thinking practical for everyday households.</p>
+        <p style="font-size:14px;line-height:1.75;color:var(--sub);">Nate put together a short video that explains how it works in plain language. Watch it — then decide if a conversation makes sense.</p>
+      </div>
+    </div>
+    <!-- CTAs -->
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px;">
+      <a href="https://youtu.be/RrnN4xuFFOo?si=0TK6mIIm6zVnnjqt" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Watch Nate's Video — How It Works →
+      </a>
+      <div style="font-size:11px;color:var(--dim);text-align:center;">A short breakdown of IBC in plain language — no jargon, no pitch</div>
+      <a href="https://vault.unlimitedlifeconcepts.com/book-with-kevin" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+        Ready to Talk? Book a Call with Kevin →
+      </a>
+      <div class="bridge-divider" style="margin:4px 0;"></div>
+      <div class="mini-course-card">
+        <div class="mini-course-label">Free Mini-Course</div>
+        <div class="mini-course-title">5 Cash Flow Principles That Change Everything</div>
+        <div class="mini-course-desc">Not ready to talk yet? Get the free 5-part email series that explains the principles behind everything you just saw — in plain language, delivered weekly to your inbox.</div>
+        <a href="https://richeyinsurancesolutions.com/mini-course" target="_blank" rel="noopener noreferrer" class="btn-outline-blue">
+          Get the Free Mini-Course →
+        </a>
+        <div class="trust-note">Free · No spam · Unsubscribe anytime</div>
+      </div>
+    </div>
+    <button class="back-link" onclick="showScreen('results')">← Back to my results</button>
+  </div>
+</div>
+
+<footer>
+  <div>© 2026 Richey Insurance Solutions · CA License #4387972</div>
+  <div style="margin-top:4px;">Your data stays private — nothing is stored or transmitted.</div>
+</footer>
+
+<script>
+// ── CONSTANTS ──────────────────────────────────────────────────────────────────
+const BOOKING = 'https://vault.unlimitedlifeconcepts.com/book-with-kevin';
+
+// ── SCREEN NAVIGATION ──────────────────────────────────────────────────────────
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startAssessment() {
+  currentStep = 1;
+  renderStep();
+  showScreen('steps');
+}
+
+function resetTool() {
+  // Clear all inputs
+  Object.keys(formData).forEach(k => formData[k] = '');
+  formData.dependents = '2';
+  currentStep = 1;
+  showScreen('landing');
+}
+
+// ── FORM DATA ─────────────────────────────────────────────────────────────────
+const formData = {
+  income:'', housing:'', utilities:'', food:'', transport:'',
+  insurance:'', debtPmt:'', disc:'', otherExp:'',
+  checking:'', investments:'', retirement:'', otherAssets:'',
+  mortgage:'', creditCards:'', autoLoans:'', studentLoans:'',
+  termLife:'', existingDB:'', dependents:'2'
+};
+
+// ── STEPS CONFIG ──────────────────────────────────────────────────────────────
+const STEPS = [
+  {
+    title: 'WHAT COMES IN',
+    desc: 'Your gross monthly income before taxes. We use this as the foundation — it\'s what your household depends on and what needs to be protected.',
+    note: 'Use your gross (before-tax) income. This is what matters for insurance coverage and financial planning.',
+    fields: [
+      { key:'income', label:'Gross Monthly Income', hint:'before taxes' }
+    ]
+  },
+  {
+    title: 'WHERE IT GOES',
+    desc: 'Your regular monthly expenses. Estimates are fine — this is a diagnostic, not a tax return.',
+    note: null,
+    fields: [
+      { key:'housing',   label:'Housing',        hint:'rent or mortgage payment' },
+      { key:'utilities', label:'Utilities' },
+      { key:'food',      label:'Food & Groceries' },
+      { key:'transport', label:'Transportation' },
+      { key:'insurance', label:'Insurance',       hint:'health, life, other' },
+      { key:'debtPmt',   label:'Debt Payments',  hint:'all monthly minimums' },
+      { key:'disc',      label:'Discretionary',  hint:'dining, subscriptions, entertainment' },
+      { key:'otherExp',  label:'Other Expenses' },
+    ]
+  },
+  {
+    title: 'WHAT YOU HAVE',
+    desc: 'Your current financial assets broken down by accessibility. This matters because not all money is equally available to you.',
+    note: 'Liquid = access within 48hrs, no penalty. Restricted = retirement accounts with early withdrawal penalties.',
+    fields: 'assets' // special rendering
+  },
+  {
+    title: 'WHAT YOU OWE',
+    desc: 'Outstanding balances and your existing life insurance coverage.',
+    note: null,
+    fields: 'debts' // special rendering
+  }
+];
+
+let currentStep = 1;
+
+// ── STEP RENDERER ─────────────────────────────────────────────────────────────
+function renderStep() {
+  const step = STEPS[currentStep - 1];
+  const total = STEPS.length;
+
+  // Progress bar
+  const pb = document.getElementById('progress-bar');
+  pb.innerHTML = '';
+  for (let i = 0; i < total; i++) {
+    const seg = document.createElement('div');
+    seg.className = 'progress-seg' + (i < currentStep ? ' done' : '');
+    pb.appendChild(seg);
+  }
+
+  document.getElementById('step-label').textContent = `Step ${currentStep} of ${total}`;
+  document.getElementById('step-title').textContent = step.title;
+  document.getElementById('step-desc').textContent = step.desc;
+
+  const noteEl = document.getElementById('step-note');
+  if (step.note) {
+    noteEl.textContent = 'ℹ️ ' + step.note;
+    noteEl.style.display = 'block';
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  // Fields
+  const fieldsEl = document.getElementById('step-fields');
+  fieldsEl.innerHTML = '';
+
+  if (step.fields === 'assets') {
+    fieldsEl.innerHTML = `
+      <div class="form-section-label green">Liquid Assets — Immediately Accessible</div>
+      ${makeField('checking', 'Checking & Savings', 'access within 48 hours, no penalty')}
+      ${makeField('investments', 'Brokerage / Investment Accounts', 'non-retirement, sellable within days')}
+      <div class="form-divider"></div>
+      <div class="form-section-label yellow">Restricted Assets — Limited Access</div>
+      ${makeField('retirement', 'Retirement Accounts', '401k, IRA — penalties apply before 59½')}
+      ${makeField('otherAssets', 'Other Assets', 'home equity, business value, other')}
+    `;
+  } else if (step.fields === 'debts') {
+    fieldsEl.innerHTML = `
+      ${makeField('mortgage', 'Mortgage Balance')}
+      ${makeField('creditCards', 'Credit Card Balances')}
+      ${makeField('autoLoans', 'Auto Loans')}
+      ${makeField('studentLoans', 'Student Loans')}
+      <div class="form-divider"></div>
+      <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Existing Life Insurance</div>
+      <div class="two-col">
+        ${makeField('termLife', 'Term Life Coverage', '')}
+        ${makeField('existingDB', 'Permanent Coverage', '')}
+      </div>
+      ${makeField('dependents', 'Dependents', 'people depending on your income', false)}
+    `;
+  } else {
+    step.fields.forEach(f => {
+      fieldsEl.innerHTML += makeField(f.key, f.label, f.hint || '');
+    });
+  }
+
+  // Restore values
+  fieldsEl.querySelectorAll('input').forEach(inp => {
+    const key = inp.dataset.key;
+    if (key && formData[key] !== undefined) inp.value = formData[key];
+    inp.addEventListener('input', e => { formData[e.target.dataset.key] = e.target.value; });
+  });
+
+  // Buttons
+  const btnsEl = document.getElementById('step-buttons');
+  btnsEl.innerHTML = '';
+  if (currentStep > 1) {
+    const back = document.createElement('button');
+    back.className = 'btn-back';
+    back.textContent = '← Back';
+    back.onclick = () => { currentStep--; renderStep(); window.scrollTo({top:0}); };
+    btnsEl.appendChild(back);
+  }
+  const next = document.createElement('button');
+  next.className = 'btn-primary btn-next';
+  next.textContent = currentStep < total ? 'Continue →' : 'See My Results →';
+  next.onclick = () => {
+    if (currentStep < total) {
+      currentStep++;
+      renderStep();
+      window.scrollTo({top:0});
+    } else {
+      runScoring();
+    }
+  };
+  btnsEl.appendChild(next);
+}
+
+function makeField(key, label, hint='', dollar=true) {
+  return `
+    <div class="field">
+      <label>${label}${hint ? `<span>· ${hint}</span>` : ''}</label>
+      <div class="input-wrap">
+        ${dollar ? '<span class="prefix">$</span>' : ''}
+        <input type="number" min="0" data-key="${key}"
+          class="${dollar ? '' : 'no-prefix'}"
+          placeholder="0"
+          inputmode="decimal"/>
+      </div>
+    </div>`;
+}
+
+// ── SCORING ENGINE ────────────────────────────────────────────────────────────
+function fmt(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(2) + 'M';
+  if (n >= 1000)    return '$' + Math.round(n/1000) + 'K';
+  return '$' + Math.round(n);
+}
+function fmtF(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function scoreSystem(d) {
+  const grossIncome = parseFloat(d.income) || 0;
+  const income      = grossIncome * 0.72;
+  const housing     = parseFloat(d.housing) || 0;
+  const utilities   = parseFloat(d.utilities) || 0;
+  const food        = parseFloat(d.food) || 0;
+  const transport   = parseFloat(d.transport) || 0;
+  const insurance   = parseFloat(d.insurance) || 0;
+  const debtPmt     = parseFloat(d.debtPmt) || 0;
+  const disc        = parseFloat(d.disc) || 0;
+  const otherExp    = parseFloat(d.otherExp) || 0;
+  const totalExp    = housing+utilities+food+transport+insurance+debtPmt+disc+otherExp;
+  const surplus     = income - totalExp;
+  const checking    = parseFloat(d.checking) || 0;
+  const investments = parseFloat(d.investments) || 0;
+  const retirement  = parseFloat(d.retirement) || 0;
+  const otherAssets = parseFloat(d.otherAssets) || 0;
+  const totalSaved  = checking+investments+retirement+otherAssets || 1;
+  const mortgage    = parseFloat(d.mortgage) || 0;
+  const creditCards = parseFloat(d.creditCards) || 0;
+  const autoLoans   = parseFloat(d.autoLoans) || 0;
+  const studentLoans= parseFloat(d.studentLoans) || 0;
+  const termLife    = parseFloat(d.termLife) || 0;
+  const existingDB  = parseFloat(d.existingDB) || 0;
+  const dependents  = parseInt(d.dependents) || 2;
+  const totalDebt   = mortgage+creditCards+autoLoans+studentLoans;
+  const protectionNeed = (grossIncome*12*10)+totalDebt+(dependents*75000);
+
+  // DEBT DRAIN
+  const debtBurden    = income > 0 ? debtPmt/income : 0;
+  const annualInterest= (creditCards*0.22)+(autoLoans*0.075)+(mortgage*0.065*0.55);
+  const debtSeverity  = debtBurden>0.35?'critical':debtBurden>0.20?'significant':debtBurden>0.10?'moderate':'low';
+  const debtScore     = Math.max(5,Math.min(100,(1-Math.min(1,debtBurden*2.5))*100));
+
+  // LIQUIDITY TRAP
+  const monthsCovered = totalExp>0 ? checking/totalExp : 0;
+  const lockedPct     = retirement/totalSaved;
+  let liqScore=0;
+  if(monthsCovered>=6)      liqScore=90+Math.min(10,(monthsCovered-6)*2);
+  else if(monthsCovered>=3) liqScore=65+((monthsCovered-3)/3)*25;
+  else if(monthsCovered>=1) liqScore=35+((monthsCovered-1)/2)*30;
+  else                      liqScore=Math.max(5,monthsCovered*35);
+  liqScore=Math.min(100,liqScore);
+  const liqSeverity=monthsCovered<1?'critical':monthsCovered<3?'significant':monthsCovered<6?'moderate':'low';
+
+  // PROTECTION GAP
+  const currentCoverage=termLife+existingDB;
+  const protectionGap=Math.max(0,protectionNeed-currentCoverage);
+  const gapPct=protectionNeed>0?protectionGap/protectionNeed:0;
+  const protSeverity=gapPct>0.6?'critical':gapPct>0.3?'significant':gapPct>0.1?'moderate':'low';
+  const protScore=Math.max(5,Math.min(100,(1-gapPct)*100));
+
+  const overall=Math.round((debtScore*0.35)+(liqScore*0.35)+(protScore*0.30));
+
+  // INSIGHTS
+  const insights=[];
+  if(debtBurden>0.30)
+    insights.push({type:'bad',text:`${(debtBurden*100).toFixed(0)}% of your take-home income is already committed to lenders before you make a single decision with it. That's not a spending problem — it's a structural one.`});
+  else if(debtBurden>0.15)
+    insights.push({type:'warn',text:`About ${(debtBurden*100).toFixed(0)}% of your monthly income goes to debt payments. Every dollar paid in interest is a dollar that can't build your financial position.`});
+  if(monthsCovered<1)
+    insights.push({type:'bad',text:`Your accessible cash covers less than one month of expenses. One unexpected event — job loss, medical bill, car repair — and the entire system comes under pressure.`});
+  else if(monthsCovered<3)
+    insights.push({type:'warn',text:`You have ${monthsCovered.toFixed(1)} months of truly liquid coverage. Most financial professionals recommend at least 3 — and even that has limits.`});
+  if(lockedPct>0.6)
+    insights.push({type:'warn',text:`${Math.round(lockedPct*100)}% of your saved capital is in retirement accounts you can't access without penalties. You have assets — but not control over them.`});
+  if(protectionGap>200000)
+    insights.push({type:'bad',text:`There's a ${fmt(protectionGap)} gap between what your family would need and what's currently in place. That gap exists today — not someday.`});
+  if(surplus<0)
+    insights.push({type:'bad',text:`Your expenses currently exceed your estimated take-home income. Each month the gap widens — and the options narrow.`});
+  else if(income>0&&surplus/income<0.10)
+    insights.push({type:'warn',text:`After expenses, you're retaining about ${((surplus/income)*100).toFixed(0)}% of your estimated take-home. There's room in that number — but only if the structure changes.`});
+  if(!insights.length)
+    insights.push({type:'info',text:`Your numbers look functional on the surface. But functional and optimized are two very different things. The question is whether your money is doing everything it could be doing.`});
+
+  const expRatios=[
+    {label:'Housing',v:housing},{label:'Utilities',v:utilities},
+    {label:'Food',v:food},{label:'Transportation',v:transport},
+    {label:'Insurance',v:insurance},{label:'Debt Payments',v:debtPmt},
+    {label:'Discretionary',v:disc},{label:'Other',v:otherExp},
+  ].filter(e=>e.v>0).map(e=>({...e,pct:income>0?(e.v/income)*100:0}));
+
+  return {
+    overall,debtScore:Math.round(debtScore),liqScore:Math.round(liqScore),protScore:Math.round(protScore),
+    debtBurden,debtSeverity,annualInterest,monthsCovered,liqSeverity,lockedPct,
+    protectionGap,protSeverity,protectionNeed,currentCoverage,
+    surplus,totalExp,totalDebt,insights,expRatios,dependents,debtPmt,grossIncome
+  };
+}
+
+// ── RUN SCORING & RENDER RESULTS ──────────────────────────────────────────────
+function runScoring() {
+  showScreen('processing');
+  setTimeout(() => {
+    const r = scoreSystem(formData);
+    renderResults(r);
+    showScreen('results');
+  }, 2400);
+}
+
+const SEV_COLOR = {
+  critical:   '#E5383B',
+  significant:'#F5A623',
+  moderate:   '#2E86DE',
+  low:        '#1DB954',
+};
+const SEV_BG = {
+  critical:   '#2A0A0A',
+  significant:'#2A1E08',
+  moderate:   '#0D2848',
+  low:        '#0A2818',
+};
+const SEV_LABEL = {critical:'Critical',significant:'Significant',moderate:'Moderate',low:'Strong'};
+
+function scoreColor(s) { return s>=75?'#1DB954':s>=50?'#F5A623':'#E5383B'; }
+
+function makeSVGRing(score, label, size=100) {
+  const r=38, circ=2*Math.PI*r;
+  const offset=circ-(score/100)*circ;
+  const col=scoreColor(score);
+  const id='ring-'+label.replace(/\s/g,'-').toLowerCase()+'-'+Math.random().toString(36).slice(2,6);
+  return `
+    <div class="score-ring-wrap">
+      <div style="position:relative;width:${size}px;height:${size}px;">
+        <svg width="${size}" height="${size}" style="transform:rotate(-90deg);">
+          <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="var(--border)" stroke-width="6"/>
+          <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="${col}" stroke-width="6"
+            stroke-dasharray="${circ}" stroke-dashoffset="${circ}"
+            stroke-linecap="round" id="${id}"
+            style="transition:stroke-dashoffset 1.1s cubic-bezier(0.34,1.56,0.64,1);"/>
+        </svg>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:${size>105?'26px':'20px'};font-weight:700;color:var(--white);">${score}</span>
+        </div>
+      </div>
+      <span class="score-ring-label">${label}</span>
+    </div>`;
+}
+
+function animateRings() {
+  // Animate all ring circles after render
+  setTimeout(() => {
+    document.querySelectorAll('[id^="ring-"]').forEach(el => {
+      const score = parseInt(el.closest('[data-score]')?.dataset.score || 0);
+      if (score) {
+        const r=38, circ=2*Math.PI*r;
+        el.style.strokeDashoffset = circ - (score/100)*circ;
+      }
+    });
+    // Trigger all rings by matching their parent
+    document.querySelectorAll('.score-ring-wrap').forEach((wrap, i) => {
+      const circle = wrap.querySelector('circle:last-of-type');
+      const scoreEl = wrap.querySelector('span[style*="font-weight:700"]');
+      if (circle && scoreEl) {
+        const score = parseInt(scoreEl.textContent);
+        const r=38, circ=2*Math.PI*r;
+        setTimeout(() => {
+          circle.style.strokeDashoffset = circ-(score/100)*circ;
+        }, 150 + i*100);
+      }
+    });
+  }, 100);
+}
+
+function renderResults(r) {
+  const overallLabel = r.overall>=80?'Strong':r.overall>=65?'Moderate':r.overall>=45?'At Risk':'Critical';
+
+  // Overall card
+  document.getElementById('overall-card').innerHTML = `
+    ${makeSVGRing(r.overall, 'Overall', 115)}
+    <div style="flex:1;min-width:180px;">
+      <div class="cta-title" style="margin-bottom:8px;">${overallLabel.toUpperCase()} CASH FLOW SYSTEM</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.65;">Your score reflects the structure of your financial system — not just your income or your effort. Below are the three structural problems your numbers reveal.</div>
+      <div style="margin-top:10px;font-size:13px;color:${r.surplus>=0?'var(--green)':'var(--red)'};">
+        Monthly ${r.surplus>=0?'surplus':'deficit'}: <strong>${fmt(Math.abs(r.surplus))}</strong>
+        <span style="color:var(--dim);font-size:11px;margin-left:6px;">(est. after taxes)</span>
+      </div>
+    </div>`;
+
+  // Problems
+  const problems = [
+    {
+      id:'debt', num:'01', title:'THE DEBT DRAIN', severity:r.debtSeverity,
+      headline: r.debtBurden>0 ? `${(r.debtBurden*100).toFixed(0)}% of income committed before you choose` : 'Debt burden appears low',
+      detail: r.debtBurden>0.15
+        ? `${fmtF(r.debtPmt)}/month leaves your household before you make a single financial decision. That's ${fmt(r.annualInterest)} in interest per year flowing to lenders.`
+        : 'Your debt payments are a relatively small portion of income. The question is whether the remaining capital is being deployed efficiently.'
+    },
+    {
+      id:'liq', num:'02', title:'THE LIQUIDITY TRAP', severity:r.liqSeverity,
+      headline: r.monthsCovered<1 ? 'Less than 1 month of accessible cash' : `${r.monthsCovered.toFixed(1)} months of truly liquid coverage`,
+      detail: r.lockedPct>0.4
+        ? `${Math.round(r.lockedPct*100)}% of your saved capital sits in retirement accounts you can't reach without penalties. You have money — but the structure limits when and how you can use it.`
+        : `Your liquid coverage sits at ${r.monthsCovered.toFixed(1)} months. Most conventional advice suggests 3–6 months.`
+    },
+    {
+      id:'prot', num:'03', title:'THE PROTECTION GAP', severity:r.protSeverity,
+      headline: r.protectionGap>0 ? `${fmt(r.protectionGap)} gap between need and coverage` : 'Coverage appears adequate',
+      detail: r.protectionGap>100000
+        ? `Based on replacing your full gross income, outstanding debt, and ${r.dependents} dependent${r.dependents!==1?'s':''}, your family would face a ${fmt(r.protectionGap)} shortfall. That gap exists today.`
+        : 'Your current coverage is close to the estimated need. The question is whether it\'s structured to also build your financial position while you\'re alive.'
+    }
+  ];
+
+  const sevCol = SEV_COLOR;
+  const probEl = document.getElementById('problems-section');
+  probEl.innerHTML = problems.map(p => `
+    <div class="problem-card" style="border-left-color:${sevCol[p.severity]};">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="problem-num">${p.num}</span>
+          <span class="problem-title">${p.title}</span>
+        </div>
+        <span class="badge" style="background:${SEV_BG[p.severity]};color:${sevCol[p.severity]};">${SEV_LABEL[p.severity]}</span>
+      </div>
+      <div class="problem-headline" style="color:${sevCol[p.severity]};">${p.headline}</div>
+      <div class="problem-detail">${p.detail}</div>
+    </div>`).join('');
+
+  // Expense bars
+  if (r.expRatios.length > 0) {
+    const expEl = document.getElementById('expenses-section');
+    expEl.style.display = 'block';
+    const bars = r.expRatios.sort((a,b)=>b.v-a.v).map(({label,v,pct}) => {
+      const col = pct>35?'var(--red)':pct>20?'var(--yellow)':'var(--blue)';
+      return `
+        <div class="exp-row">
+          <div class="exp-meta">
+            <span>${label}</span>
+            <span>${fmt(v)} · ${pct.toFixed(1)}%</span>
+          </div>
+          <div class="exp-track">
+            <div class="exp-fill" style="width:${Math.min(100,pct)}%;background:${col};"></div>
+          </div>
+        </div>`;
+    }).join('');
+    document.getElementById('expense-bars').innerHTML = bars;
+    document.getElementById('total-exp-label').textContent = fmt(r.totalExp);
+  }
+
+  // Insights
+  const insightColors = {
+    bad:  ['var(--red-pale)','var(--red)'],
+    warn: ['var(--yellow-pale)','var(--yellow)'],
+    info: ['var(--blue-pale)','var(--blue)'],
+    good: ['var(--green-pale)','var(--green)'],
+  };
+  const insEl = document.getElementById('insights-section');
+  insEl.innerHTML = r.insights.map(ins => {
+    const [bg,col] = insightColors[ins.type] || insightColors.info;
+    return `<div class="insight" style="background:${bg};border-left-color:${col};">${ins.text}</div>`;
+  }).join('');
+
+  // Animate rings after DOM updates
+  animateRings();
+}
+</script>
+</body>
+</html>
